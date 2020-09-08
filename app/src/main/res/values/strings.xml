@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LCApp</string>
+    <string name="Button_Create_Chart">Create Chart</string>
+    <string name="Text_Xvalues">X-Values</string>
+    <string name="Text_YValues">Y-Values</string>
+    <string name="create_chart_with_random_data">Create Chart with random data</string>
+</resources>

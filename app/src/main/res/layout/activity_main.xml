@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/xValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="X-Values as x1,x2,x3..."
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/yValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Y-Values as y1,y2,y3..."
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xValues" />
+
+    <Button
+        android:id="@+id/create_chart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="createChart"
+        android:text="@string/Button_Create_Chart"
+        app:layout_constraintTop_toBottomOf="@id/yValues" />
+
+    <Button
+        android:id="@+id/create_random"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="createChartWithRandomData"
+        android:text="@string/create_chart_with_random_data"
+        app:layout_constraintTop_toBottomOf="@id/create_chart" />
+</androidx.constraintlayout.widget.ConstraintLayout>

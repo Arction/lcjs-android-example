@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Using chart in HTML page</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Flexbox styling to have the chart and header fill the page.
+        Chart will take as much space as possible. -->
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+        }
+
+        .box .row.header {
+            flex: 0 1 auto;
+        }
+
+        .box .row.content {
+            flex: 1 1 auto;
+        }
+
+
+    </style>
+</head>
+
+<body class="box">
+<!-- Create div to render the chart into-->
+<div id="target" class="row content"></div>
+
+<!--IIFE assembly (lcjs.iife.js) is a standalone JS file,
+  which does not need any build tools,
+  such as NPM, to be installed-->
+<!--Script source must be defined in it's own script tag-->
+<script src="lcjs.iife.js"></script>
+
+<!--Actual chart related script tag-->
+<script>
+	function setData(data){
+		var arrData = data.split("||")
+		const ArrX = JSON.parse(arrData[0])
+		const ArrY = JSON.parse(arrData[1])
+		const chartData = ArrX.map( ( itr1, itr2 ) => ( { x: itr1, y: ArrY[itr2] } ) )
+		lineSeries.add(chartData)
+	}
+
+    let curX = 1;
+	function addData(valueFromJava){
+	    const value = Number(valueFromJava)
+	    lineSeries.add({x: curX, y: value})
+	    curX += 1
+	}
+
+    // Extract required parts from LightningChartJS.
+    const {
+        lightningChart
+    } = lcjs //Note: @arction/lcjs is not needed here, when using IIFE assembly
+		
+    // Create a XY Chart.
+    chart = lightningChart().ChartXY({
+        // Set the chart into a div with id, 'target'.
+        // Chart's size will automatically adjust to div's size.
+        container: 'target'
+    })
+        .setTitle('My first chart') // Set chart title
+        .setMouseInteractionRectangleZoom(false)
+
+    // Add a line series.
+    const lineSeries = chart.addLineSeries()
+        .setName('My data')
+        .setStrokeStyle(s=>s.setThickness(2))
+
+</script>
+</body>
+
+</html>
