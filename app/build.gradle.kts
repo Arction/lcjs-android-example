@@ -66,4 +66,6 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    // for WebView | https://developer.android.com/develop/ui/views/layout/webapps/webview
+    implementation("androidx.webkit:webkit:1.8.0")
 }
