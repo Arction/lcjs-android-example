@@ -13,7 +13,7 @@ This repository was tested only using locally connected physical Android phones.
 
 In order to run the application, you need to [get a license key](https://lightningchart.com/js-charts/#license-key) and supply it in [index.js file](https://github.com/Arction/lcjs-react-template/blob/master/app/src/main/assets/index.js).
 
-![Screen recording of LightningChart JS in Android application](./recording.mp4)
+https://github.com/Arction/lcjs-android-example/assets/55391673/71d67f8f-af67-4fde-8b4b-8935059253ba
 
 ## How can LightningChart JS be used in an Android application?
 
