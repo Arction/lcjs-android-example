@@ -11,7 +11,7 @@ Please refer to Android Studio materials on instructions how to run Android appl
 **Emulators may not be supported!** Many emulators still don't support WebGL as well as browsers do, so they may be completely non-functional with LightningChart JS or may perform very badly.
 This repository was tested only using locally connected physical Android phones.
 
-In order to run the application, you need to [get a license key](https://lightningchart.com/js-charts/#license-key) and supply it in [index.js file](https://github.com/Arction/lcjs-react-template/blob/master/app/src/main/assets/index.js).
+In order to run the application, you need to [get a license key](https://lightningchart.com/js-charts/#license-key) and supply it in [index.js file](https://github.com/Arction/lcjs-android-example/blob/master/app/src/main/assets/index.js).
 
 https://github.com/Arction/lcjs-android-example/assets/55391673/71d67f8f-af67-4fde-8b4b-8935059253ba
 
@@ -31,7 +31,7 @@ See "Web-based content" in Android developer materials, for example. https://dev
 
 Here you can find the steps that were done to create this project template, so you can follow them for any existing Android application.
 
-All LightningChart JS related code changes have been isolated to a single commit, which you can conveniently view [here](https://github.com/Arction/lcjs-android-example/commit/e714979599698f90971cb6c631d344ed2432a2b5).
+All LightningChart JS related code changes have been isolated to a single commit, which you can conveniently view [here](https://github.com/Arction/lcjs-android-example/commit/c84cc6570f81edb766531998d94f4002684b5528).
 
 ### 1. Add charting Web application to code base
 
@@ -40,15 +40,15 @@ Alternatively, you could dynamically build these files from a more complicated c
 
 These files can be found under `app/src/main/assets`:
 
-- [`index.html`](https://github.com/Arction/lcjs-react-template/blob/master/app/src/main/assets/index.html)
-- [`index.js`](https://github.com/Arction/lcjs-react-template/blob/master/app/src/main/assets/index.js)
+- [`index.html`](https://github.com/Arction/lcjs-android-example/blob/master/app/src/main/assets/index.html)
+- [`index.js`](https://github.com/Arction/lcjs-android-example/blob/master/app/src/main/assets/index.js)
 - `lcjs.iife.js`
   - This is the IIFE bundle of LightningChart JS library, downloaded from [NPM](https://www.npmjs.com/package/@arction/lcjs?activeTab=code)
 
 ### 2. Add required project configurations for using LightningChart JS in WebView
 
-- Add `implementation("androidx.webkit:webkit:1.8.0")` to [`app/build/gradle.kts`](https://github.com/Arction/lcjs-react-template/blob/master/app/build.gradle.kts). Required for using WebView.
-- Add `<uses-permission android:name="android.permission.INTERNET" />` to [`app/src/main/AndroidManifest.xml`](https://github.com/Arction/lcjs-react-template/blob/master/app/src/main/AndroidManifest.xml). Required for LightningChart JS developer/trial license verification.
+- Add `implementation("androidx.webkit:webkit:1.8.0")` to [`app/build/gradle.kts`](https://github.com/Arction/lcjs-android-example/blob/master/app/build.gradle.kts). Required for using WebView.
+- Add `<uses-permission android:name="android.permission.INTERNET" />` to [`app/src/main/AndroidManifest.xml`](https://github.com/Arction/lcjs-android-example/blob/master/app/src/main/AndroidManifest.xml). Required for LightningChart JS developer/trial license verification.
 
 ### 3. Display the Web application in a WebView
 
