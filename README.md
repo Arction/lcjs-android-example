@@ -43,7 +43,7 @@ These files can be found under `app/src/main/assets`:
 - [`index.html`](https://github.com/Arction/lcjs-android-example/blob/master/app/src/main/assets/index.html)
 - [`index.js`](https://github.com/Arction/lcjs-android-example/blob/master/app/src/main/assets/index.js)
 - `lcjs.iife.js`
-  - This is the IIFE bundle of LightningChart JS library, downloaded from [NPM](https://www.npmjs.com/package/@arction/lcjs?activeTab=code)
+  - This is the IIFE bundle of LightningChart JS library, downloaded from [NPM](https://www.npmjs.com/package/@lightningchart/lcjs?activeTab=code)
 
 ### 2. Add required project configurations for using LightningChart JS in WebView
 
