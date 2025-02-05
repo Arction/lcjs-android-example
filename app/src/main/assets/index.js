@@ -9,7 +9,7 @@ const {
 } = lcjs;
 
 const lc = lightningChart({
-    // Put your trial/developer license key here. You can get one for free from: https://lightningchart.com/js-charts/#license-key
+  // Put your trial/developer license key here. You can get one for free from: https://lightningchart.com/js-charts/#license-key
 });
 
 const container = document.getElementById("chart");
@@ -31,11 +31,10 @@ function appendData(channel, xValues, yValues) {
       .setTitle("")
       .setPadding({ left: 10, right: 10, top: 5, bottom: 5 });
     const series = chart
-      .addLineSeries({ dataPattern: { pattern: "ProgressiveX" } })
-      // NOTE: 1 is more GPU heavy than -1 thickness, but 1 can look a bit smoother in some cases
-      // .setStrokeStyle((stroke) => stroke.setThickness(1));
-      .setStrokeStyle((stroke) => stroke.setThickness(-1))
-      .setDataCleaning({ minDataPointCount: 1 });
+      .addPointLineAreaSeries({ dataPattern: "ProgressiveX" })
+      .setAreaFillStyle(emptyFill)
+      .setStrokeStyle((stroke) => stroke.setThickness(1))
+      .setMaxSampleCount(100_000);
     chart.forEachAxis((axis) => axis.setTickStrategy(AxisTickStrategies.Empty));
     chart
       .getDefaultAxisX()
@@ -49,7 +48,7 @@ function appendData(channel, xValues, yValues) {
     ch = { chart, series };
     channels[channel] = ch;
   }
-  ch.series.addArraysXY(xValues, yValues);
+  ch.series.appendSamples({ xValues, yValues });
 }
 
 // Measure FPS
